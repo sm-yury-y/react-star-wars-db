@@ -1,6 +1,13 @@
 .toggle-planet {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.toggle-planet,.error-button {
   margin-bottom: 1rem;
 }
+
+
 
 .btn-warning {
   background-color: #12BC8C;
@@ -29,4 +36,8 @@
 
 .btn-warning:not(:disabled):not(.disabled):active:focus, .btn-warning:not(:disabled):not(.disabled).active:focus, .show>.btn-warning.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(18,188,140,0.5);
+}
+
+.list-group {
+  margin-bottom: 1.5rem;
 }
