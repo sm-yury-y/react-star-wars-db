@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import SwapiService from '../../services/SwapiService';
 import ErrorButton from "../ErrorButton/ErrorButton";
+import SwapiService from '../../services/SwapiService';
 
 import './PersonDetails.css';
 
@@ -43,7 +43,7 @@ export default class PersonDetails extends Component {
     }
 
     const { id, name, gender,
-              birthYear, eyeColor } = this.state.person;
+              birth_year, eye_color } = this.state.person;
 
     return (
       <div className="person-details card">
@@ -60,11 +60,11 @@ export default class PersonDetails extends Component {
             </li>
             <li className="list-group-item">
               <span className="term">Год рождения</span>
-              <span>{birthYear}</span>
+              <span>{birth_year}</span>
             </li>
             <li className="list-group-item">
               <span className="term">Цвет глаз</span>
-              <span>{eyeColor}</span>
+              <span>{eye_color}</span>
             </li>
           </ul>
           <ErrorButton />
