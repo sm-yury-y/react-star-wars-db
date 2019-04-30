@@ -37,3 +37,8 @@
 .btn-warning:not(:disabled):not(.disabled):active:focus, .btn-warning:not(:disabled):not(.disabled).active:focus, .show>.btn-warning.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(18,188,140,0.5);
 }
+
+.card-body {
+  padding: 0;
+  padding-left: 1.25rem;
+}
