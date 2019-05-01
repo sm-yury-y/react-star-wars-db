@@ -28,23 +28,20 @@ export default class PeoplePage extends Component {
         getData={this.swapiService.getAllPeople}>
 
         {(i) => (
-          `${i.name} (${i.gender})`
+          `${i.name} (${i.birthYear})`
         )}
 
       </ItemList>
     );
 
     const personDetails = (
-    <ErrorBoundry>
-      <ItemDetails itemId={this.state.selectedPerson} />
-    </ErrorBoundry>
+      <ErrorBoundry>
+        <ItemDetails itemId={this.state.selectedPerson} />
+      </ErrorBoundry>
     );
 
     return (
-      <div>
-       <Row left={itemList} right={personDetails} />
-      </div>
+      <Row left={itemList} right={personDetails} />
     );
-
   }
 }

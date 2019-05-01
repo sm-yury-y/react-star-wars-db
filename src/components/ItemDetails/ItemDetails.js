@@ -18,7 +18,6 @@ export {
   Record
 };
 
-
 export default class ItemDetails extends Component {
 
   swapiService = new SwapiService();
