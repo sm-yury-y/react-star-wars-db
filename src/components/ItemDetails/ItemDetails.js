@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import ErrorButton from "../ErrorButton/ErrorButton";
-import SwapiService from '../../services/SwapiService';
 
 import './ItemDetails.css';
 
@@ -19,8 +18,6 @@ export {
 };
 
 export default class ItemDetails extends Component {
-
-  swapiService = new SwapiService();
 
   state = {
     item: null,
@@ -59,8 +56,7 @@ export default class ItemDetails extends Component {
       return <span>Выберите элемент из списка</span>;
     }
 
-    const { id, name, gender,
-      birthYear, eyeColor } = item;
+    const { name } = item;
 
     return (
       <div className="item-details card">
