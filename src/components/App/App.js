@@ -37,7 +37,7 @@ export default class App extends Component {
           <div className="container stardb-app">
             <Header onServiceChange={this.onServiceChange}/>
 
-              <RandomPlanet />
+              <RandomPlanet updateInterval = "2000"/>
 
               <PeoplePage />
               <PlanetsPage />
