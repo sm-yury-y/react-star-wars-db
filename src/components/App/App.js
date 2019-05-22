@@ -15,7 +15,7 @@ import { SwapiServiceProvider } from '../SwapiServiceContext';
 
 import './App.css';
 
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import StarshipDetails from "../SwComponents/StarshipDetails";
 
 export default class App extends Component {
@@ -54,37 +54,38 @@ export default class App extends Component {
           <div className="container stardb-app">
             <Header onServiceChange={this.onServiceChange}/>
 
+
             <RandomPlanet />
 
-            <Route path="/"
-                     render={() => <h2>Добро пожаловать в StarDB</h2>}
-                     exact />
-            <Route path="/people"
-                     render={() => <h2>Люди</h2>}
-                     exact />
-            <Route path="/people/:id?" component={PeoplePage} />
-            <Route path="/planets" component={PlanetsPage} />
-            <Route path="/starships" exact component={StarshipsPage} />
-            <Route path="/starships/:id"
-                     render={({match}) => {
-                      const { id } = match.params;
-                       return <StarshipDetails itemId={id} />
-                     }}/>
+            <Switch>
+              <Route path="/"
+                      render={() => <h2>Добро пожаловать в StarDB</h2>}
+                      exact />
+              <Route path="/people/:id?" component={PeoplePage} />
+              <Route path="/planets" component={PlanetsPage} />
+              <Route path="/starships" exact component={StarshipsPage} />
+              <Route path="/starships/:id"
+                      render={({match}) => {
+                        const { id } = match.params;
+                        return <StarshipDetails itemId={id} />
+                      }}/>
 
-                <Route
-                  path="/login"
-                  render={() => (
-                    <LoginPage
-                      isLoggedIn={isLoggedIn}
-                      onLogin={this.onLogin}/>
-                  )}/>
+                  <Route
+                    path="/login"
+                    render={() => (
+                      <LoginPage
+                        isLoggedIn={isLoggedIn}
+                        onLogin={this.onLogin}/>
+                    )}/>
 
-                <Route
-                  path="/secret"
-                  render={() => (
-                    <SecretPage isLoggedIn={isLoggedIn} />
-                  )}/>
+                  <Route
+                    path="/secret"
+                    render={() => (
+                      <SecretPage isLoggedIn={isLoggedIn} />
+                    )}/>
 
+            <Route render={() => <h2>Страница не найдена</h2>} />
+          </Switch>
           </div>
           </Router>
           </SwapiServiceProvider>

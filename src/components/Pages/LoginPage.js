@@ -13,7 +13,7 @@ const LoginPage = ({ isLoggedIn, onLogin }) => {
       <button
         className="btn btn-primary"
         onClick={onLogin}>
-        Login
+        Логин
       </button>
     </div>
   );
